@@ -5,3 +5,26 @@ function describeValue(value) {
   const truthiness = value ? "truthy" : "falsy";
   return `${type} | ${truthiness}`;
 }
+
+
+// Question 2: Bangladesh Weekend Machine Write a function getDayType that takes a day name and returns:
+
+function getDayType(day) {
+
+  const normalized = day.toLowerCase();
+
+  switch (normalized) {
+    case "friday":
+    case "saturday":
+      return "Weekend";
+    case "sunday":
+    case "monday":
+    case "tuesday":
+    case "wednesday":
+    case "thursday":
+      return "Working Day";
+    default:
+      return "Invalid Day";
+  }
+}
+

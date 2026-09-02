@@ -45,3 +45,26 @@ function validateUsername(username) {
   }
   return "Available";
 }
+
+
+// Question 4: Dhaka CNG Fare Meter Write a function getCngFare(distance, isNight, waitingMinutes) that returns the total fare in taka.
+
+function getCngFare(distance, isNight = false, waitingMinutes = 0) {
+
+  let distanceFare;
+  if (distance <= 2) {
+    distanceFare = 50;
+  } else {
+    distanceFare = 50 + (distance - 2) * 15;
+  }
+  const waitingCharge = waitingMinutes * 2;
+  let total = distanceFare + waitingCharge;
+  if (isNight) {
+    total *= 1.2;
+  }
+
+  return total;
+}
+
+const fare1 = getCngFare(5, false, 10);
+console.log(fare1); 

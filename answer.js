@@ -28,3 +28,20 @@ function getDayType(day) {
   }
 }
 
+// Question 3: Username Gatekeeper Write a function validateUsername that takes a username and checks it against these rules, in this order:
+
+function validateUsername(username) {
+
+  if (username.length < 4) {
+    return "Too Short";
+  }
+
+  if (username.includes(" ")) {
+    return "No Space Allowed";
+  }
+
+  if (username.toLowerCase().includes("admin")) {
+    return "Reserved Word";
+  }
+  return "Available";
+}
